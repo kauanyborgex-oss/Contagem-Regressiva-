@@ -3,65 +3,392 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nosso Lar 💍❤️</title>
+<title>A Doce Espera do Nosso Lar | Kauany & Wagner</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-body{
-    margin:0;
-    font-family:Arial, sans-serif;
-    background:linear-gradient(135deg,#ffdde1,#ee9ca7);
-    color:white;
-    text-align:center;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    min-height:100vh;
+:root {
+    --rosa-claro: #ffeef0;
+    --rosa-medio: #ff758c;
+    --vermelho-romantico: #ff1a40;
+    --vinho-escuro: #4a0e17;
 }
 
-.container{
-    padding:30px;
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #ffe5ec 0%, #ffb3c1 50%, #ff758c 100%);
+    color: var(--vinho-escuro);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 20px 10px;
+    box-sizing: border-box;
 }
 
-h1{
-    font-size:2.5rem;
+.container {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    padding: 25px 20px;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 10px 30px rgba(255, 26, 64, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    box-sizing: border-box;
 }
 
-#countdown{
-    font-size:2rem;
-    margin-top:20px;
-    font-weight:bold;
+/* Cabeçalho */
+.casal-nomes {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.8rem;
+    color: var(--vermelho-romantico);
+    margin: 0 0 5px 0;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
 }
 
-p{
-    font-size:1.2rem;
+h1 {
+    font-size: 1.6rem;
+    margin: 5px 0 15px 0;
+    color: var(--vinho-escuro);
+    font-weight: 600;
+}
+
+.poesia {
+    font-style: italic;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #611f29;
+    margin-bottom: 25px;
+    padding: 0 10px;
+}
+
+/* Contagem Regressiva */
+.countdown-box {
+    background: linear-gradient(135deg, var(--vermelho-romantico), var(--rosa-medio));
+    color: white;
+    padding: 20px 15px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 15px rgba(255, 26, 64, 0.2);
+}
+
+.countdown-box p {
+    margin: 0 0 10px 0;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+#countdown {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+/* Linha do Tempo (Nossa História) */
+.timeline {
+    text-align: left;
+    margin-bottom: 35px;
+    padding-left: 10px;
+}
+
+.timeline-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    color: var(--vermelho-romantico);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 20px;
+    border-left: 2px dashed var(--rosa-medio);
+}
+
+.timeline-item::before {
+    content: '❤️';
+    position: absolute;
+    left: -10px;
+    top: -2px;
+    background: white;
+    border-radius: 50%;
+    font-size: 0.9rem;
+}
+
+.timeline-date {
+    font-weight: bold;
+    color: var(--vermelho-romantico);
+    font-size: 0.95rem;
+}
+
+.timeline-desc {
+    font-size: 0.9rem;
+    margin-top: 3px;
+    color: var(--vinho-escuro);
+}
+
+/* Financeiro */
+.financeiro-box {
+    background: white;
+    border-radius: 20px;
+    padding: 20px 15px;
+    border: 1px solid rgba(255, 117, 140, 0.3);
+    text-align: left;
+}
+
+.financeiro-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--vinho-escuro);
+    text-align: center;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.meta-fixa {
+    background: var(--rosa-claro);
+    padding: 12px;
+    border-radius: 12px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    border: 1px dashed var(--rosa-medio);
+}
+
+.meta-fixa span {
+    color: var(--vermelho-romantico);
+    font-size: 1.2rem;
+}
+
+.form-entrada {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.form-entrada input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+}
+
+.form-entrada input:focus {
+    outline: none;
+    border-color: var(--rosa-medio);
+}
+
+.form-entrada button {
+    background: var(--vermelho-romantico);
+    color: white;
+    border: none;
+    padding: 0 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.lista-entradas {
+    max-height: 120px;
+    overflow-y: auto;
+    margin-bottom: 15px;
+    padding-right: 5px;
+}
+
+.entrada-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    padding: 6px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.total-box {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 1.05rem;
+    padding-top: 10px;
+    border-top: 2px solid var(--rosa-medio);
+}
+
+.restante-status {
+    text-align: center;
+    font-size: 0.85rem;
+    margin-top: 10px;
+    font-weight: 600;
+    color: #2b7a3a;
 }
 </style>
 </head>
-
 <body>
 
 <div class="container">
-    <h1>🏡❤️ Nosso Lar ❤️💍</h1>
-    <p>Contagem regressiva para o início da nossa vida juntos ✨</p>
+    <div class="casal-nomes">Kauany & Wagner</div>
+    <h1>A Doce Espera do Nosso Lar 🏡✨</h1>
+    
+    <div class="poesia">
+        "Guardar o coração no compasso da espera é ter a certeza de que a ansiedade logo dará lugar à imensa felicidade de sermos um só teto, um só amor."
+    </div>
 
-    <div id="countdown"></div>
+    <div class="countdown-box">
+        <p>❤️ Contando cada segundo para o grande dia ❤️</p>
+        <div id="countdown">Carregando contagem...</div>
+    </div>
+
+    <div class="timeline">
+        <div class="timeline-title">Como tudo começou...</div>
+        
+        <div class="timeline-item">
+            <div class="timeline-date">25 de Dezembro</div>
+            <div class="timeline-desc">O melhor presente de Natal: a primeira mensagem que ele me mandou. 🎄✨</div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-date">27 de Janeiro</div>
+            <div class="timeline-desc">O coração disparou na plataforma... Nosso primeiro encontro no metrô. 🚇❤️</div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-item-inner">
+                <div class="timeline-date">09 de Fevereiro</div>
+                <div class="timeline-desc">O primeiro date oficial. O começo de algo inexplicável. 🌹✨</div>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-date">08 de Março</div>
+            <div class="timeline-desc">O pedido de namoro que mudou os nossos destinos para sempre. 💍🔒</div>
+        </div>
+    </div>
+
+    <div class="financeiro-box">
+        <div class="financeiro-title">📊 Economias do Nosso Lar</div>
+        <div class="meta-fixa">Fechamento de Junho: <span>R$ 3.350,00</span></div>
+        
+        <div class="form-entrada">
+            <input type="text" id="descEntrada" placeholder="Ex: Investimento, Guardado">
+            <input type="number" id="valorEntrada" placeholder="R$ Valor" step="0.01">
+            <button onclick="adicionarEntrada()">+</button>
+        </div>
+
+        <div class="lista-entradas" id="listaEntradas">
+            </div>
+
+        <div class="total-box">
+            <span>Total Guardado:</span>
+            <span id="totalAcumulado">R$ 0,00</span>
+        </div>
+        <div class="restante-status" id="statusRestante"></div>
+    </div>
 </div>
 
 <script>
-const targetDate = new Date("December 19, 2026 00:00:00").getTime();
+// --- SCRIPT DA CONTAGEM REGRESSIVA (20 DE DEZEMBRO) ---
+const targetDate = new Date("December 20, 2026 00:00:00").getTime();
 
 setInterval(() => {
     const now = new Date().getTime();
     const distance = targetDate - now;
 
-    const days = Math.floor(distance / (1000*60*60*24));
-    const hours = Math.floor((distance%(1000*60*60*24))/(1000*60*60));
-    const minutes = Math.floor((distance%(1000*60*60))/(1000*60));
-    const seconds = Math.floor((distance%(1000*60))/1000);
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    document.getElementById("countdown").innerHTML =
-        `${days} dias ❤️ ${hours}h ${minutes}m ${seconds}s`;
-},1000);
+    if (distance < 0) {
+        document.getElementById("countdown").innerHTML = "Chegou o nosso momento! 🏡❤️";
+    } else {
+        document.getElementById("countdown").innerHTML =
+            `${days}d &nbsp;•&nbsp; ${hours}h &nbsp;•&nbsp; ${minutes}m &nbsp;•&nbsp; ${seconds}s`;
+    }
+}, 1000);
+
+
+// --- SCRIPT DO FECHAMENTO FINANCEIRO ---
+const META_JUNHO = 3350.00;
+let entradas = [];
+
+// Tenta carregar dados salvos no celular para não perder os registros ao fechar a página
+if(localStorage.getItem('entradasLar')) {
+    entradas = JSON.parse(localStorage.getItem('entradasLar'));
+    atualizarInterfaceFinanceira();
+}
+
+function adicionarEntrada() {
+    const descInput = document.getElementById('descEntrada');
+    const valorInput = document.getElementById('valorEntrada');
+    
+    const descricao = descInput.value.trim() || "Entrada";
+    const valor = parseFloat(valorInput.value);
+
+    if (isNaN(valor) || valor <= 0) {
+        alert("Por favor, insira um valor válido.");
+        return;
+    }
+
+    entradas.push({ descricao, valor });
+    localStorage.setItem('entradasLar', JSON.stringify(entradas));
+
+    descInput.value = '';
+    valorInput.value = '';
+    
+    atualizarInterfaceFinanceira();
+}
+
+function deletarEntrada(index) {
+    entradas.splice(index, 1);
+    localStorage.setItem('entradasLar', JSON.stringify(entradas));
+    atualizarInterfaceFinanceira();
+}
+
+function atualizarInterfaceFinanceira() {
+    const listaHTML = document.getElementById('listaEntradas');
+    const totalHTML = document.getElementById('totalAcumulado');
+    const statusHTML = document.getElementById('statusRestante');
+    
+    listaHTML.innerHTML = '';
+    let total = 0;
+
+    entradas.forEach((item, index) => {
+        total += item.valor;
+        listaHTML.innerHTML += `
+            <div class="entrada-item">
+                <span>${item.descricao}</span>
+                <span style="color:#2b7a3a; font-weight:600;">
+                    R$ ${item.valor.toFixed(2).replace('.', ',')}
+                    <span onclick="deletarEntrada(${index})" style="color:#ff1a40; margin-left:8px; cursor:pointer;">✕</span>
+                </span>
+            </div>
+        `;
+    });
+
+    totalHTML.innerHTML = `R$ ${total.toFixed(2).replace('.', ',')}`;
+
+    // Atualiza o quanto falta ou se bateu a meta
+    if (total >= META_JUNHO) {
+        statusHTML.innerHTML = "🎉 Parabéns! Vocês atingiram a meta de Junho!";
+        statusHTML.style.color = "#2b7a3a";
+    } else {
+        const restante = META_JUNHO - total;
+        statusHTML.innerHTML = `Faltam R$ ${restante.toFixed(2).replace('.', ',')} para a meta de Junho. 💪`;
+        statusHTML.style.color = "#a36200";
+    }
+}
 </script>
 
 </body>
