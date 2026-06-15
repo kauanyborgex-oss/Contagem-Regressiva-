@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nosso Lar ❤️</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:linear-gradient(135deg,#ffdde1,#ee9ca7);
+    color:white;
+    text-align:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
+
+.container{
+    padding:30px;
+}
+
+h1{
+    font-size:2.5rem;
+}
+
+#countdown{
+    font-size:2rem;
+    margin-top:20px;
+    font-weight:bold;
+}
+
+p{
+    font-size:1.2rem;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>🏡❤️ Nosso Lar ❤️💍</h1>
+    <p>Contagem regressiva para o início da nossa vida juntos ✨</p>
+
+    <div id="countdown"></div>
+</div>
+
+<script>
+const targetDate = new Date("December 19, 2026 00:00:00").getTime();
+
+setInterval(() => {
+    const now = new Date().getTime();
+    const distance = targetDate - now;
+
+    const days = Math.floor(distance / (1000*60*60*24));
+    const hours = Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+    const minutes = Math.floor((distance%(1000*60*60))/(1000*60));
+    const seconds = Math.floor((distance%(1000*60))/1000);
+
+    document.getElementById("countdown").innerHTML =
+        `${days} dias ❤️ ${hours}h ${minutes}m ${seconds}s`;
+},1000);
+</script>
+
+</body>
+</html>
