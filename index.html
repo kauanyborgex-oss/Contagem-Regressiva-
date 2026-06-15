@@ -42,27 +42,6 @@ body {
     box-sizing: border-box;
 }
 
-/* Estilo para as fotos do casal */
-.foto-casal {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    border-radius: 20px;
-    margin: 15px 0;
-    box-shadow: 0 5px 15px rgba(74, 14, 23, 0.15);
-    display: block;
-}
-
-.timeline-foto {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    border-radius: 15px;
-    margin: 10px 0 5px 0;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    display: block;
-}
-
 /* Cabeçalho */
 .casal-nomes {
     font-family: 'Dancing Script', cursive;
@@ -266,8 +245,6 @@ h1 {
         "Guardar o coração no compasso da espera é ter a certeza de que a ansiedade logo dará lugar à imensa felicidade de sermos um só teto, um só amor."
     </div>
 
-    <img src="images/IMG_3954.jpeg" alt="Kauany e Wagner mostrando as alianças de compromisso" class="foto-casal">
-
     <div class="countdown-box">
         <p>❤️ Contando cada segundo para o grande dia ❤️</p>
         <div id="countdown">Carregando contagem...</div>
@@ -284,7 +261,6 @@ h1 {
         <div class="timeline-item">
             <div class="timeline-date">27 de Janeiro</div>
             <div class="timeline-desc">O coração disparou na plataforma... Nosso primeiro encontro no metrô. 🚇❤️</div>
-            <img src="images/C6E7A815-384C-4300-87FC-82172B172B17.jpeg" alt="Primeiro encontro no metrô" class="timeline-foto">
         </div>
 
         <div class="timeline-item">
@@ -295,7 +271,6 @@ h1 {
         <div class="timeline-item">
             <div class="timeline-date">08 de Março</div>
             <div class="timeline-desc">O pedido de namoro que mudou os nossos destinos para sempre. 💍🔒</div>
-            <img src="images/IMG_3066.jpeg" alt="Pedido de namoro oficial" class="timeline-foto">
         </div>
     </div>
 
@@ -341,22 +316,12 @@ setInterval(() => {
 }, 1000);
 
 
-// --- SCRIPT DO FECHAMENTO FINANCEIRO INTELIGENTE ---
-const META_DEZEMBRO = 15000.00;
+// --- SCRIPT DO FECHAMENTO FINANCEIRO ---
+const META_FINAL = 15000.00;
 let entradas = [];
 
-// Lista de meses por extenso para a mudança automática
-const mesesDoAno = [
-    "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
-    "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
-];
-
-// Pega o mês atual com base na data do celular/computador
-const dataAtual = new Date();
-const mesAtualTexto = mesesDoAno[dataAtual.getMonth()];
-
-// Aplica o nome do mês dinamicamente na caixinha de texto
-document.getElementById('tituloMeta').innerHTML = `Fechamento de ${mesAtualTexto}: <span>R$ 15.000,00</span>`;
+// Define de forma fixa a palavra "Fechamento" sem puxar o mês dinamicamente
+document.getElementById('tituloMeta').innerHTML = `Fechamento: <span>R$ 15.000,00</span>`;
 
 if(localStorage.getItem('entradasLar')) {
     entradas = JSON.parse(localStorage.getItem('entradasLar'));
@@ -414,12 +379,12 @@ function atualizarInterfaceFinanceira() {
 
     totalHTML.innerHTML = `R$ ${total.toFixed(2).replace('.', ',')}`;
 
-    if (total >= META_DEZEMBRO) {
+    if (total >= META_FINAL) {
         statusHTML.innerHTML = `🎉 Incrível! Vocês atingiram o objetivo final de R$ 15.000,00!`;
         statusHTML.style.color = "#2b7a3a";
     } else {
-        const restante = META_DEZEMBRO - total;
-        statusHTML.innerHTML = `Faltam R$ ${restante.toFixed(2).replace('.', ',')} para a meta de Dezembro. 💪`;
+        const restante = META_FINAL - total;
+        statusHTML.innerHTML = `Faltam R$ ${restante.toFixed(2).replace('.', ',')} para a meta. 💪`;
         statusHTML.style.color = "#a36200";
     }
 }
