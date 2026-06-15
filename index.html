@@ -42,6 +42,27 @@ body {
     box-sizing: border-box;
 }
 
+/* Estilo para as fotos do casal */
+.foto-casal {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+    margin: 15px 0;
+    box-shadow: 0 5px 15px rgba(74, 14, 23, 0.15);
+    display: block;
+}
+
+.timeline-foto {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    border-radius: 15px;
+    margin: 10px 0 5px 0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    display: block;
+}
+
 /* Cabeçalho */
 .casal-nomes {
     font-family: 'Dancing Script', cursive;
@@ -245,6 +266,9 @@ h1 {
         "Guardar o coração no compasso da espera é ter a certeza de que a ansiedade logo dará lugar à imensa felicidade de sermos um só teto, um só amor."
     </div>
 
+    <!-- FOTO PRINCIPAL: Alianças e início do sonho -->
+    <img src="image_3.png" alt="Kauany e Wagner mostrando as alianças de compromisso" class="foto-casal">
+
     <div class="countdown-box">
         <p>❤️ Contando cada segundo para o grande dia ❤️</p>
         <div id="countdown">Carregando contagem...</div>
@@ -261,6 +285,8 @@ h1 {
         <div class="timeline-item">
             <div class="timeline-date">27 de Janeiro</div>
             <div class="timeline-desc">O coração disparou na plataforma... Nosso primeiro encontro no metrô. 🚇❤️</div>
+            <!-- FOTO DO METRÔ -->
+            <img src="image.png" alt="Primeiro encontro no metrô" class="timeline-foto">
         </div>
 
         <div class="timeline-item">
@@ -273,6 +299,8 @@ h1 {
         <div class="timeline-item">
             <div class="timeline-date">08 de Março</div>
             <div class="timeline-desc">O pedido de namoro que mudou os nossos destinos para sempre. 💍🔒</div>
+            <!-- FOTO DO PEDIDO / CASAL COMEMORANDO -->
+            <img src="image_2.png" alt="Pedido de namoro oficial" class="timeline-foto">
         </div>
     </div>
 
@@ -323,7 +351,6 @@ setInterval(() => {
 const META_JUNHO = 3350.00;
 let entradas = [];
 
-// Tenta carregar dados salvos no celular para não perder os registros ao fechar a página
 if(localStorage.getItem('entradasLar')) {
     entradas = JSON.parse(localStorage.getItem('entradasLar'));
     atualizarInterfaceFinanceira();
@@ -379,7 +406,6 @@ function atualizarInterfaceFinanceira() {
 
     totalHTML.innerHTML = `R$ ${total.toFixed(2).replace('.', ',')}`;
 
-    // Atualiza o quanto falta ou se bateu a meta
     if (total >= META_JUNHO) {
         statusHTML.innerHTML = "🎉 Parabéns! Vocês atingiram a meta de Junho!";
         statusHTML.style.color = "#2b7a3a";
